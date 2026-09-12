@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bm20qwf3m5xqt"]
+
+[ext_resource type="PackedScene" uid="uid://bnrvh1eme625k" path="res://scenes/player.tscn" id="1_j5px3"]
+[ext_resource type="PackedScene" uid="uid://b0xf8lmddgbgi" path="res://scenes/pipes.tscn" id="2_twpsu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j4vek"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hjkgo"]
+
+[node name="root" type="Node2D" unique_id=435841920]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=595097350]
+scale = Vector2(1, 1.0057306)
+zoom = Vector2(0.225, 0.225)
+
+[node name="player" parent="." unique_id=1574712936 instance=ExtResource("1_j5px3")]
+
+[node name="floor" type="Node2D" parent="." unique_id=1586968914]
+position = Vector2(0, 1537)
+
+[node name="Area2D" type="StaticBody2D" parent="floor" unique_id=1667800189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/Area2D" unique_id=1202435307]
+shape = SubResource("WorldBoundaryShape2D_j4vek")
+
+[node name="roof" type="Node2D" parent="." unique_id=55634099]
+position = Vector2(0, -1545)
+rotation = 3.1415927
+
+[node name="Area2D" type="StaticBody2D" parent="roof" unique_id=371665775]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roof/Area2D" unique_id=609935574]
+shape = SubResource("WorldBoundaryShape2D_hjkgo")
+
+[node name="pipes" parent="." unique_id=988474767 instance=ExtResource("2_twpsu")]
+position = Vector2(853, 98)

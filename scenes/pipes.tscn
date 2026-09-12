@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0xf8lmddgbgi"]
+
+[ext_resource type="Script" uid="uid://b2tpxjdyrddic" path="res://scripts/pipeMove.gd" id="1_3ahhd"]
+[ext_resource type="PackedScene" uid="uid://c4pp0apl03liv" path="res://scenes/pipe.tscn" id="1_f17p0"]
+
+[node name="pipes" type="Node2D" unique_id=988474767]
+script = ExtResource("1_3ahhd")
+
+[node name="pipeBot" parent="." unique_id=417229945 instance=ExtResource("1_f17p0")]
+position = Vector2(0, 1739)
+
+[node name="pipeTop" parent="." unique_id=22937386 instance=ExtResource("1_f17p0")]
+position = Vector2(0, -1545)
